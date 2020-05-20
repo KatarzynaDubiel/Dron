@@ -5,7 +5,14 @@
 
 using namespace std;
 
-int FWektor(){
+class W3D{
+    int a=1;
+};
+class W3D2: private W3D{
+    int b=2;
+};
+
+double FWektor(){
 
     using Wektor3D=SWektor<double,3>;
     Wektor3D Punkt;
