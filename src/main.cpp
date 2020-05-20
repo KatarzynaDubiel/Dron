@@ -2,7 +2,8 @@
 #include <iomanip>
 #include <vector>
 #include "lacze_do_gnuplota.hh"
-//#include "Wektor.hh"
+
+#include "Wektor.hh"
 
 using namespace std;
 
@@ -14,6 +15,8 @@ int main()
   PzG::LaczeDoGNUPlota  Lacze;
   char c;
 
+  //Wektor<double,3> Wektor3D;
+
   Lacze.DodajNazwePliku("bryly/plaszczyzna_dol.dat");
   Lacze.ZmienTrybRys(PzG::TR_3D);
   Lacze.Inicjalizuj();  // Tutaj startuje gnuplot.
@@ -22,13 +25,14 @@ int main()
   Lacze.UstawZakresY(-90, 90);
   Lacze.UstawZakresZ(-20, 90);
 
+  int FWektor();
 
   Lacze.UstawRotacjeXZ(40,60); // Tutaj ustawiany jest widok
   cout << "Oto dno ... " << flush;
   Lacze.Rysuj();        // Teraz powinno pojawic sie okienko gnuplota
                         // z rysunkiem, o ile istnieje plik "prostopadloscian1.dat"
   cout << "Nacisnij ENTER, aby zobaczyc drona ... " << flush;
-  cin >> noskipws >> c;
+  //cin >> noskipws >> c;
 
   //Lacze.UsunWszystkieNazwyPlikow();
   Lacze.DodajNazwePliku("bryly/prostopadloscian.dat");
@@ -36,12 +40,14 @@ int main()
                         // z rysunkiem, o ile istnieje plik "prostopadloscian2.dat"
 
   cout << "Nacisnij ENTER, aby zobaczyc powierzchnie wody ... " << flush;
-  cin >> noskipws >> c;
+  //cin >> noskipws >> c;
 
   //Lacze.UsunWszystkieNazwyPlikow();
   Lacze.DodajNazwePliku("bryly/plaszczyzna_gora.dat");
   Lacze.Rysuj();        // Teraz powinno pojawic sie okienko gnuplota
                         // z rysunkiem, o ile istnieje plik "prostopadloscian3.dat"*/
+
+
 
   cout << "Nacisnij ENTER, aby zakonczyc ... " << flush;
   cin >> noskipws >> c;
