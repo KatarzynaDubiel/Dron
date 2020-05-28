@@ -34,7 +34,7 @@ int main(){
 
   char opcja;
   double kat, droga;
-  cout<<endl<<"r - zadaj ruch na wprost"<<endl<<"o- zadaj zmiane orientacji"<<endl<<"m - wyswietl menu"<<endl<<endl<<"k - koniec dzialania programu"<<endl<<endl<<"Twoj wybor, m - menu> ";
+  cout<<endl<<"r - zadaj ruch na wprost"<<endl<<"o - zadaj zmiane orientacji"<<endl<<"m - wyswietl menu"<<endl<<endl<<"k - koniec dzialania programu"<<endl<<endl<<"Twoj wybor, m - menu> ";
   while(1)
   {
     cin>>opcja;
@@ -58,12 +58,12 @@ int main(){
       {
         korpus.sterowanie(0,0,1);
         Lacze.Rysuj();
-        //usleep(200000);
+        usleep(200000);
       }
       cout<<"Aktualna ilosc obiektow Wektor3D: "<< SWektor<double,3>::get_aktualne() <<endl<<"Laczna ilosc obiektow Wektor3D: "<<SWektor<double,3>::get_wszystkie()<<endl<<endl<<"Twoj wybor, m - menu> ";
       break;
       case 'm':
-        cout<<endl<<"r - zadaj ruch na wprost"<<endl<<"o- zadaj zmiane orientacji"<<endl<<"m - wyswietl menu"<<endl<<endl<<"k - koniec dzialania programu"<<endl<<endl<<"Twoj wybor, m - menu> ";
+        cout<<endl<<"r - zadaj ruch na wprost"<<endl<<"o - zadaj zmiane orientacji"<<endl<<"m - wyswietl menu"<<endl<<endl<<"k - koniec dzialania programu"<<endl<<endl<<"Twoj wybor, m - menu> ";
       break;
       case 'k':
       cout<<"Koniec programu"<<endl<<endl;

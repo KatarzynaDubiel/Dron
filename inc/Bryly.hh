@@ -43,7 +43,7 @@ for(int i=0; i<(int)wierzcholki.size(); i++){//rzutowanie wierzcholkow na int
     plik.close();
     for(int i=0; i<(int)wierzcholki.size(); i++)
     {
-        wierzcholki[i]=OZ(katOZ)*(OX(katOX)*(wierzcholki[i]-srodek))+srodek+Przesuniecie;
+        wierzcholki[i]=OZ(katOZ)*(OX(katOX)*(wierzcholki[i]-srodek))+srodek+Przesuniecie;//cos nie tak?
     }
 }
 void Bryla::zapis(){
