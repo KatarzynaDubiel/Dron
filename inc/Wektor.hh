@@ -1,13 +1,31 @@
 #ifndef SWektor_HH
 #define SWektor_HH
-#include "LZespolona.hh"
+
 #include <iostream>
+
+//Szablon z poprzedniego zadania + liczenie ich ilosci
 
 template <typename STyp, int SWymiar>
 class SWektor {
   STyp Skladowa[SWymiar];//SWektor<STyp,SWymiar> ma 3 skladowe (elementy, wartości), je zapisujemy w tablicy o 3 skladnikach
+  static int wszystkie;//liczba wszystkich wektorow
+  static int aktualne;//liczba aktualnych wektorow
 
 public:
+
+SWektor(){
+    for(int i=0; i<SWymiar; i++)
+    Skladowa[i]=0;
+    wszystkie++;
+    aktualne++;
+}
+    static int get_aktualne(){
+        return aktualne;
+    }
+    static int get_wszystkie(){
+        return wszystkie;
+    }
+    ~SWektor(){--aktualne;};
     STyp operator[](int i) const;//deklaracja przeciazenia operatora [] w const. To nie bedzie zmieniane, stad const, a przeciazenie jest potrzebne, bo bedziemy wyluskiwac z tablicy posczegolne elementy.
     STyp &operator[](int i);//odwolanie do bezposredniego dzialania na operatorze
 
@@ -27,6 +45,11 @@ public:
     //Liczba==Skalar
 
 };
+
+template <typename STyp, int SWymiar>
+ int SWektor<STyp,SWymiar>::aktualne=0;
+template <typename STyp, int SWymiar>
+ int SWektor<STyp,SWymiar>::wszystkie=0;
 
 template <typename STyp, int SWymiar>
 STyp SWektor<STyp,SWymiar>::operator[](int i) const{
